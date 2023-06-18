@@ -14,13 +14,13 @@ brew services start jenkins
 http://localhost:8080/login?from=%2F
 
 ```
-brew services info jenkins-lts
+brew services info jenkins
 ```
 <img width="512" alt="Zrzut ekranu 2023-06-18 o 15 04 47" src="https://github.com/eda6767/Jenkins/assets/102791467/8e03e6de-b1ad-4fd4-bca5-f9787134ecc9">
 
 In case running Jenkins, first you have to stop the service by using command
 ```
-brew services stop jenkins-lts
+brew services stop jenkins
 ps auxww | grep jenkins 
 ```
 
@@ -28,3 +28,5 @@ Now it is time to change configuration file.
 ```
 sudo vi /opt/homebrew/Cellar/jenkins/2.410/homebrew.mxcl.jenkins.plist
 ```
+
+In program arguments section 
