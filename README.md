@@ -63,6 +63,7 @@ On the webside http://localhost:8080/ let's pass the password from the file:
 cat /Users/<user>/.jenkins/secrets/initialAdminPassword
 ```
 
+After this action we can finally install our suggested plugins.
 
 
 </sup>
