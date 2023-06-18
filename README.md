@@ -5,7 +5,8 @@
 <sub> 
 Installing Jenkins we started from https://www.jenkins.io/download/weekly/macos/  
 
-
+<br />
+<br />
  
 `brew install jenkins`
 
