@@ -75,7 +75,7 @@ Jenkins is now ready to use.
 <img width="1245" alt="Zrzut ekranu 2023-06-18 o 16 55 05" src="https://github.com/eda6767/Jenkins/assets/102791467/76ad4896-9dc6-40c3-b27f-8517006a9f91">
 
 
-</sup>
+
 
 
 # How to integrate Jenkins with Github
@@ -83,3 +83,10 @@ Jenkins is now ready to use.
 
 In order to integrate Jenkins with Github we need to Create new job based on choosen Github repository.
 
+Notice that instead of master branch we need to use main branch, otherwise we will receive error : Couldn't find any revision to build. Verify the repository and branch configuration for this job
+<br />
+![Uploading Zrzut ekranu 2023-06-18 o 17.24.21.png…]()
+<br />
+<br />
+
+</sup>
