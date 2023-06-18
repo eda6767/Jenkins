@@ -45,9 +45,9 @@ sudo vi /opt/homebrew/Cellar/jenkins/2.410/homebrew.mxcl.jenkins.plist
 In program arguments section I added some extra arguments:
 
 ```
-<string>-DJENKINS_HOME=/Users/edytakorba/my-jenkins/jenkins-home</string>
-<string>--webroot=/Users/edytakorba/my-jenkins/cache/jenkins.war</string>
-<string>--pluginroot=/Users/edytakorba/my-jenkins/cache/jenkins/plugins</string>
+<string>-DJENKINS_HOME=/Users/<user_name>/my-jenkins/jenkins-home</string>
+<string>--webroot=/Users/<user_name>/my-jenkins/cache/jenkins.war</string>
+<string>--pluginroot=/Users/<user_name>/my-jenkins/cache/jenkins/plugins</string>
 ```
 
 Now, we can restart Jenkins service:
