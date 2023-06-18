@@ -94,4 +94,8 @@ Notice that instead of master branch we need to use main branch, otherwise we wi
 <br />
 <br />
 
+<img width="595" alt="Zrzut ekranu 2023-06-18 o 17 27 49" src="https://github.com/eda6767/Jenkins/assets/102791467/de4a616d-1f42-4852-b2c5-0b60987754ea">
+
+
+
 
