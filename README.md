@@ -1,8 +1,9 @@
-<sub> # Jenkins </sup>
+ # Jenkins 
 
 <sub><sup> https://www.jenkins.io/download/weekly/macos/ </sub></sup>
 
 <sub> 
+  
 `brew install jenkins`
 
 `ps auxww | grep jenkins`
