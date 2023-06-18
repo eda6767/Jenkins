@@ -16,6 +16,8 @@
 
 <br />
 http://localhost:8080/login?from=%2F
+<br />
+
 
 ```
 brew services info jenkins
