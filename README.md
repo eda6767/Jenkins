@@ -2,7 +2,7 @@
 
 <sub><sup> https://www.jenkins.io/download/weekly/macos/ </sub></sup>
 
-
+<sub> 
 `brew install jenkins`
 
 `ps auxww | grep jenkins`
@@ -38,4 +38,4 @@ In program arguments section I added some extra arguments:
 <string>--pluginroot=/Users/edytakorba/my-jenkins/cache/jenkins/plugins</string>
 ```
 
-
+</sup>
