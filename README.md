@@ -50,4 +50,19 @@ In program arguments section I added some extra arguments:
 <string>--pluginroot=/Users/edytakorba/my-jenkins/cache/jenkins/plugins</string>
 ```
 
+Now, we can restart Jenkins service:
+
+
+```
+brew services restart jenkins
+```
+
+On the webside http://localhost:8080/ let's pass the password from the file:
+
+```
+cat /Users/<user>/.jenkins/secrets/initialAdminPassword
+```
+
+
+
 </sup>
