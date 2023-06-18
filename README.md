@@ -1,6 +1,6 @@
 # Jenkins
 
-https://www.jenkins.io/download/weekly/macos/
+<sub><sup> https://www.jenkins.io/download/weekly/macos/ </sub></sup>
 
 
 `brew install jenkins`
