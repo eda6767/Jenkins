@@ -63,7 +63,12 @@ On the webside http://localhost:8080/ let's pass the password from the file:
 cat /Users/<user>/.jenkins/secrets/initialAdminPassword
 ```
 
-After this action we can finally install our suggested plugins.
+After this action we can finally install our suggested plugins and create new member. 
+Jenkins is now ready to use.
+
+<br />
+<br />
+<img width="1245" alt="Zrzut ekranu 2023-06-18 o 16 55 05" src="https://github.com/eda6767/Jenkins/assets/102791467/76ad4896-9dc6-40c3-b27f-8517006a9f91">
 
 
 </sup>
