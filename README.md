@@ -1,9 +1,12 @@
  # Jenkins 
 
-<sub><sup> https://www.jenkins.io/download/weekly/macos/ </sub></sup>
+
 
 <sub> 
-  
+Installing Jenkins we started from https://www.jenkins.io/download/weekly/macos/  
+
+
+ 
 `brew install jenkins`
 
 `ps auxww | grep jenkins`
