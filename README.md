@@ -81,3 +81,5 @@ Jenkins is now ready to use.
 # How to integrate Jenkins with Github
 
 
+In order to integrate Jenkins with Github we need to Create new job based on choosen Github repository.
+
