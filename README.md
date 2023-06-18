@@ -78,6 +78,6 @@ Jenkins is now ready to use.
 </sup>
 
 
-#How to integrate Jenkins with Github
+# How to integrate Jenkins with Github
 
 
