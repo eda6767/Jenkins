@@ -1,6 +1,7 @@
  # Jenkins 
 
 
+## Configuring Jenkins on MacOS 
 
 <sub> 
 Installing Jenkins we started from https://www.jenkins.io/download/weekly/macos/  
