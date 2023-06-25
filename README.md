@@ -162,7 +162,33 @@ Then we will generate the key:
 ```
 ssh-keygen -f remote_key
 ```
-It will generate 2 files. First 'remote-key', which is certificate key - this is a private key, and second 'remote-key.pub' which is a public key.
+It will generate 2 files. First 'remote-key', which is certificate key - this is a private key, and second 'remote-key.pub' which is a public key. Now, let's modify the Dockerfile. We need to add COPY instruction, which will copy a file from file system to this image. 
+
+```
+COPY remote-key.pub /home/remote_user/.ssh/authorized_keys
+```
+
+Finally Dockerfile looks like this:
+
+```
+FROM centos
+
+RUN yum -y install openssh-server
+
+RUN useradd remote_user && \
+    echo "1234" | passwd remote-user --stdin && \
+    mkdir /home/remote_user/.ssh && \
+    chmod 700 /home/remote_user/.ssh
+
+COPY remote-key.pub /home/remote_user/.ssh/authorized_keys
+
+RUN chown remote_urser:remote_user -R /home/remote_user/.ssh/ && \
+    chmod 600 /home/remote_user/.ssh/authorized_keys
+
+RUN /usr/sbin/sshd-keygen
+
+CMD /usr/sbin/sshd -D
+```
 
 ```
 docker build -t remote-image .
