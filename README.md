@@ -136,3 +136,11 @@ Now, we can execute job, with given parameters
 ## Create Docker container
 
 Now, we need to create a virtual machine with goal to execute jobs on this particular machine - another Docker container  with SSH service, that we can connect from. 
+
+
+First, we can create folder named for example jenkins_ and create Dockerfile in this folder
+
+```
+touch Dockerfile
+
+```
