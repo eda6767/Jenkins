@@ -207,7 +207,9 @@ Then we will generate the key:
 ssh-keygen -f remote_key
 ```
 
-It will generate 2 files. First 'remote-key', which is certificate key - this is a private key, and second 'remote-key.pub' which is a public key. Now, let's modify the Dockerfile. We need to add COPY instruction, which will copy a file from file system to this image. 
+It will generate 2 files. First 'remote-key', which is certificate key - this is a private key, and second 'remote-key.pub' which is a public key. Now, let's modify the Dockerfile. 
+
+We need to add COPY instruction, which will copy a file from file system to this image. 
 
 
 ```
