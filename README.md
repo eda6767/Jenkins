@@ -99,13 +99,13 @@ Notice that instead of master branch we need to use main branch, otherwise we wi
 <img width="595" alt="Zrzut ekranu 2023-06-18 o 17 27 49" src="https://github.com/eda6767/Jenkins/assets/102791467/de4a616d-1f42-4852-b2c5-0b60987754ea">
 
 
-# Creating local DNS
+## Creating local DNS
 
 
-# SSH to Jenkins
+## SSH to Jenkins
 
 
-# Add parameter to your job
+## Add parameter to your job
 
 ```
 #!/bin/bash
@@ -132,3 +132,5 @@ Now, we can execute job, with given parameters
 
 <img width="1397" alt="Zrzut ekranu 2023-06-25 o 15 54 00 1" src="https://github.com/eda6767/Jenkins/assets/102791467/ec0c40b5-d19f-48b0-b63d-8ced4dad584b">
 
+
+## Create Docker container
