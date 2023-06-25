@@ -118,11 +118,13 @@ if [$CONDITION_VARIABLE = "true"] ; then
 else
  echo "Goobye"
 fi
-
- 
-
 ```
 
+Now, we can execute job, with given parameters
+
+```
+./script.sh Tom false
+```
 
 
 
