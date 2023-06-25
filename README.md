@@ -129,3 +129,6 @@ Now, we can execute job, with given parameters
 
 ## Installing plugins in Jenkins
 
+
+<img width="1397" alt="Zrzut ekranu 2023-06-25 o 15 54 00 1" src="https://github.com/eda6767/Jenkins/assets/102791467/ec0c40b5-d19f-48b0-b63d-8ced4dad584b">
+
