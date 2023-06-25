@@ -152,3 +152,27 @@ Now, we can build a container based on the image
 docker run --name remote-container -p 80:80 remote-image
 docker ps
 ```
+Next, we create docker-compose.yml file:
+
+```
+touch docker-compose.yml
+mkdir docker_home
+```
+
+
+docker-compose.yml file:
+
+```
+version: '3'
+services:
+  remote
+    container_name: remote_container
+    ports:
+      - "8080:8080"
+    volumes:
+      "$PWD"/docker_home:/var/docker_home"  
+    networks:
+      - net
+networks:
+  net:        
+```
