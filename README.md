@@ -264,5 +264,10 @@ networks:
 
 ```
 
+Now, we can execute:
+
+```
+docker-compose build
+```
 
 
