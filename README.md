@@ -145,3 +145,10 @@ touch Dockerfile
 docker build -t remote-image .
 docker images
 ```
+
+Now, we can build a container based on the image
+
+```
+docker run --name remote-container -p 80:80 remote-image
+docker ps
+```
