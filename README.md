@@ -135,10 +135,46 @@ Now, we can execute job, with given parameters
 
 ## Create Docker container
 
-Now, we need to create a virtual machine with goal to execute jobs on this particular machine - another Docker container  with SSH service, that we can connect from. 
-
-
 First, we can create folder named for example jenkins_ and create Dockerfile in this folder
+
+```
+mkdir jenkins_
+touch Dockerfile
+```
+
+
+Now, we can build a container based on the image
+
+```
+docker run --name remote-container -p 80:80 remote-image
+docker ps
+```
+Next, we create docker-compose.yml file:
+
+```
+touch docker-compose.yml
+mkdir docker_home
+```
+
+
+docker-compose.yml file:
+
+```
+version: '3'
+services:
+  remote
+    container_name: remote_container
+    ports:
+      - "8080:8080"
+    volumes:
+      "$PWD"/docker_home:/var/docker_home"  
+    networks:
+      - net
+networks:
+  net:        
+```
+
+Now, we need to create a virtual machine with goal to execute jobs on this particular machine - another Docker container  with SSH service, that we can connect from. 
 
 ```
 mkdir centos
@@ -193,35 +229,4 @@ CMD /usr/sbin/sshd -D
 ```
 docker build -t remote-image .
 docker images
-```
-
-Now, we can build a container based on the image
-
-```
-docker run --name remote-container -p 80:80 remote-image
-docker ps
-```
-Next, we create docker-compose.yml file:
-
-```
-touch docker-compose.yml
-mkdir docker_home
-```
-
-
-docker-compose.yml file:
-
-```
-version: '3'
-services:
-  remote
-    container_name: remote_container
-    ports:
-      - "8080:8080"
-    volumes:
-      "$PWD"/docker_home:/var/docker_home"  
-    networks:
-      - net
-networks:
-  net:        
 ```
