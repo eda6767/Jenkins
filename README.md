@@ -143,4 +143,5 @@ First, we can create folder named for example jenkins_ and create Dockerfile in 
 ```
 touch Dockerfile
 docker build -t remote-image .
+docker images
 ```
