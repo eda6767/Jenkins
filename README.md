@@ -242,25 +242,34 @@ Next step is to modify
 
 
 ```
-version: '3'
-services:
-  remote
-    container_name: remote_container
-    ports:
-      - "8080:8080"
-    volumes:
-      "$PWD"/docker_home:/var/docker_home"  
-    networks:
-      - net
-  remote_host:
-    container_name: remote-host
-    image: remote-host
-    build: 
-      context: centos
-    networks:
-      - net        
-networks:
-  net:        
+FROM centos
+RUN cd /etc/yum.repos.d/
+RUN sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-*
+RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-*
+
+
+RUN yum -y install openssh-server
+RUN yum install -y passwd
+
+RUN useradd remote_user
+RUN echo "1234" | passwd remote_user --stdin && \
+    cd docker_home && \
+    mkdir remote_user && \
+    cd remote_user && \
+    mkdir .ssh && \
+    cd . && \
+    cd jenkins_/centos && \
+    chmod 700 /docker_home/remote_user/.ssh
+
+COPY remote_key.pub /docker_home/remote_user/.ssh/authorized_keys
+
+RUN chown remote_user:remote_user -R /docker_home/remote_user/.ssh/ && \
+    chmod 600 /docker_home/remote_user/.ssh/authorized_keys
+
+RUN /usr/sbin/sshd-keygen
+
+CMD /usr/sbin/sshd -D
+
 
 ```
 
