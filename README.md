@@ -162,7 +162,7 @@ Then we will generate the key:
 ```
 ssh-keygen -f remote_key
 ```
-
+It will generate 2 files. First 'remote-key', which is certificate key - this is a private key, and second 'remote-key.pub' which is a public key.
 
 ```
 docker build -t remote-image .
