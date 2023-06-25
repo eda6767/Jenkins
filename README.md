@@ -141,7 +141,30 @@ Now, we need to create a virtual machine with goal to execute jobs on this parti
 First, we can create folder named for example jenkins_ and create Dockerfile in this folder
 
 ```
+mkdir centos
 touch Dockerfile
+```
+
+Dockerfile looks like this:
+
+```
+FROM centos
+
+RUN yum -y install openssh-server
+
+RUN useradd remote_user && \
+    echo "1234" | passwd remote-user --stdin && \
+    mkdir /home/remote_user/.ssh && \
+    chmod 700/home/remote_user/.ssh
+```
+Then we will generate the key:
+
+```
+ssh-keygen -f remote_key
+```
+
+
+```
 docker build -t remote-image .
 docker images
 ```
