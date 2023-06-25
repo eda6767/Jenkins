@@ -105,5 +105,7 @@ Notice that instead of master branch we need to use main branch, otherwise we wi
 # SSH to Jenkins
 
 
+# Add parameter to your job
+
 
 
