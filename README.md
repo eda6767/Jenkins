@@ -127,4 +127,5 @@ Now, we can execute job, with given parameters
 ```
 
 
+## Installing plugins in Jenkins
 
