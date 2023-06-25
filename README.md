@@ -107,5 +107,22 @@ Notice that instead of master branch we need to use main branch, otherwise we wi
 
 # Add parameter to your job
 
+```
+#!/bin/bash
+
+NAME=$1
+CONDITION_VARIABLE=$2
+
+if [$CONDITION_VARIABLE = "true"] ; then
+ echo "Hello, $NAME"
+else
+ echo "Goobye"
+fi
+
+ 
+
+```
+
+
 
 
