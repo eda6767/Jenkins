@@ -142,6 +142,10 @@ mkdir jenkins_
 touch Dockerfile
 ```
 
+```
+docker build -t remote-image .
+docker images
+```
 
 Now, we can build a container based on the image
 
@@ -149,6 +153,10 @@ Now, we can build a container based on the image
 docker run --name remote-container -p 80:80 remote-image
 docker ps
 ```
+
+
+
+
 Next, we create docker-compose.yml file:
 
 ```
@@ -198,7 +206,9 @@ Then we will generate the key:
 ```
 ssh-keygen -f remote_key
 ```
+
 It will generate 2 files. First 'remote-key', which is certificate key - this is a private key, and second 'remote-key.pub' which is a public key. Now, let's modify the Dockerfile. We need to add COPY instruction, which will copy a file from file system to this image. 
+
 
 ```
 COPY remote-key.pub /home/remote_user/.ssh/authorized_keys
@@ -226,7 +236,31 @@ RUN /usr/sbin/sshd-keygen
 CMD /usr/sbin/sshd -D
 ```
 
+Next step is to modify 
+
+
 ```
-docker build -t remote-image .
-docker images
+version: '3'
+services:
+  remote
+    container_name: remote_container
+    ports:
+      - "8080:8080"
+    volumes:
+      "$PWD"/docker_home:/var/docker_home"  
+    networks:
+      - net
+  remote_host:
+    container_name: remote-host
+    image: remote-host
+    build: 
+      context: centos
+    networks:
+      - net        
+networks:
+  net:        
+
 ```
+
+
+
