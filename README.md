@@ -293,3 +293,8 @@ docker exec ti- jenkins bash
 ssh remote_user@remote_host
 
 ```
+
+<img width="1391" alt="Zrzut ekranu 2023-07-16 o 12 11 46" src="https://github.com/eda6767/Jenkins/assets/102791467/80bd439d-e0d4-41a8-a765-bb709578ccc6">
+
+
+
