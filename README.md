@@ -337,16 +337,18 @@ ssh -i remote-key remote_user@remote_host
 ```
 
 
-## Installing plugins in Jenkins
+## Integrating Docker SSH server with Jenkins
 
+For this purpose first, we need to install plugins on Jenkins - SSH.
 
 <img width="1397" alt="Zrzut ekranu 2023-06-25 o 15 54 00 1" src="https://github.com/eda6767/Jenkins/assets/102791467/ec0c40b5-d19f-48b0-b63d-8ced4dad584b">
 
 
-<img width="1391" alt="Zrzut ekranu 2023-07-16 o 12 11 46" src="https://github.com/eda6767/Jenkins/assets/102791467/80bd439d-e0d4-41a8-a765-bb709578ccc6">
-
-
-Before that we need to create credentials for remote_user and with generated previously private key.
-
+Next, we need to create credentials for remote_user and with generated previously private key.
 
 <img width="1328" alt="Zrzut ekranu 2023-07-16 o 12 20 27" src="https://github.com/eda6767/Jenkins/assets/102791467/ae7238f8-3a99-4257-8f01-932a817d1211">
+
+Then we have to add remote SSH host:
+
+<img width="1391" alt="Zrzut ekranu 2023-07-16 o 12 11 46" src="https://github.com/eda6767/Jenkins/assets/102791467/80bd439d-e0d4-41a8-a765-bb709578ccc6">
+
