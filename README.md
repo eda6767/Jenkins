@@ -297,4 +297,7 @@ ssh remote_user@remote_host
 <img width="1391" alt="Zrzut ekranu 2023-07-16 o 12 11 46" src="https://github.com/eda6767/Jenkins/assets/102791467/80bd439d-e0d4-41a8-a765-bb709578ccc6">
 
 
+Before that we need to create credentials for remote_user and with generated previously private key.
 
+
+<img width="1328" alt="Zrzut ekranu 2023-07-16 o 12 20 27" src="https://github.com/eda6767/Jenkins/assets/102791467/ae7238f8-3a99-4257-8f01-932a817d1211">
