@@ -190,12 +190,12 @@ docker logs -f jenkins
 <img width="1397" alt="Zrzut ekranu 2023-06-25 o 15 54 00 1" src="https://github.com/eda6767/Jenkins/assets/102791467/ec0c40b5-d19f-48b0-b63d-8ced4dad584b">
 
 
-## Create Docker container
+## Create Docker container for SSH
 
-First, we can create folder named for example jenkins_ and create Dockerfile in this folder
+First, we can create folder under jenkins_ : centos and create Dockerfile in this folder
 
 ```
-mkdir jenkins_
+mkdir centos
 touch Dockerfile
 ```
 
@@ -214,15 +214,9 @@ docker ps
 
 
 
-Next, we create docker-compose.yml file:
+Let's take back to our JENKINS container, and modify the docker-compose.yml file. Let's add new service called remote_host which will be used for connection via SSH to another container.
 
-```
-touch docker-compose.yml
-mkdir docker_home
-```
-
-
-docker-compose.yml file:
+Out file should look like this:
 
 ```
 version: '3'
