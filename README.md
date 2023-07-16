@@ -143,9 +143,23 @@ Now we have to create compose docker file
 
 ```
 vi docker-compose.yml
-
 ```
 
+```
+version: '3'
+services:
+  jenkins:
+    container_name: jenkins
+    image: jenkins/jenkins
+    ports:
+      - "8080:8080"
+    volumes:
+      - $PWD/jenkins_home:/var/jenkins_home
+    networks:
+      - net
+networks:
+  net:
+```
 
 ## Installing plugins in Jenkins
 
