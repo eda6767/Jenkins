@@ -301,14 +301,21 @@ docker images
 
 
 <br />
-Now, we can build a container based on the image
 <br />
+
+Now, we can build a container based on the image
+
+<br />
+<br />
+
+
 ```
 docker-compose up -d
 docker ps
 ```
 
-
+<br />
+<br />
 
 
 
