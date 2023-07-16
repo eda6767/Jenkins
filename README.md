@@ -130,7 +130,21 @@ For this purpose we are gonna use Jenkins image, which has already all configura
 docker pull jenkins/jenkins:lts-jdk11
 ```
 
+Let's create a directory for projekt and for Jenkins: 
 
+```
+mkdir jenkins_
+cd jenkins_
+mkdir jenkins
+cd jenkins
+```
+
+Now we have to create compose docker file
+
+```
+vi docker-compose.yml
+
+```
 
 
 ## Installing plugins in Jenkins
