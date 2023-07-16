@@ -191,7 +191,10 @@ docker logs -f jenkins
 
 
 ## Create Docker container for SSH
-Now, we need to create a virtual machine with goal to execute jobs on this particular machine - another Docker container  with SSH service, that we can connect from. First, we can create folder under jenkins_/jenkins : centos and create Dockerfile in this folder
+<br />
+Now, we need to create a virtual machine with goal to execute jobs on this particular machine - another Docker container  with SSH service, that we can connect from. 
+<br />
+First, we can create folder under jenkins_/jenkins : centos and create Dockerfile in this folder
 
 ```
 mkdir centos
