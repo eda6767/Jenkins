@@ -300,11 +300,11 @@ docker images
 
 
 
-
+<br />
 Now, we can build a container based on the image
-
+<br />
 ```
-docker run --name remote-container -p 80:80 remote-image
+docker-compose up -d
 docker ps
 ```
 
