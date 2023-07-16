@@ -170,6 +170,8 @@ Now we have to create service reading the docker-compose files.
 
 ```
 docker-compose up -d
+docker ps
+docker logs -f jenkins
 ```
 
 ## Installing plugins in Jenkins
