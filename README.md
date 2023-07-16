@@ -324,13 +324,26 @@ docker ps
 <img width="1185" alt="Zrzut ekranu 2023-07-16 o 16 13 14" src="https://github.com/eda6767/Jenkins/assets/102791467/b4c6eb80-badf-42a7-8a17-dae547203444">
 <br />
 <br />
-Now, we can integrate Jenkins with our Docker container. We had previously defined remote host DNS for Jenkins containter
+Now, we can integrate Jenkins with our Docker container. We had previously defined remote host DNS for Jenkins containter and we can try to connect from jenkins container to remote_host container, using a password from Dockerfile
 
 ```
-docker exec ti- jenkins bash
+docker exec ti- 3518434374fe_jenkins bash
 ssh remote_user@remote_host
+```
+
+<br />
+Another way to connect is by using remote-key, without a password:
 
 ```
+cd centos
+docker cp remote-key 3518434374fe_jenkins/tmp/remote-key
+docker exec ti- 3518434374fe_jenkins bash
+cd /tmp/
+ls
+ssh -i remote-key remote_user@remote_host
+```
+
+
 
 <img width="1391" alt="Zrzut ekranu 2023-07-16 o 12 11 46" src="https://github.com/eda6767/Jenkins/assets/102791467/80bd439d-e0d4-41a8-a765-bb709578ccc6">
 
