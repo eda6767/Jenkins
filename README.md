@@ -286,3 +286,10 @@ To check the running container :
 docker ps
 ```
 
+Now, we can integrate Jenkins with our Docker container. We had previously defined remote host DNS for Jenkins containter
+
+```
+docker exec ti- jenkins bash
+ssh remote_user@remote_host
+
+```
