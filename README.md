@@ -343,12 +343,16 @@ For this purpose first, we need to install plugins on Jenkins - SSH.
 
 <img width="1397" alt="Zrzut ekranu 2023-06-25 o 15 54 00 1" src="https://github.com/eda6767/Jenkins/assets/102791467/ec0c40b5-d19f-48b0-b63d-8ced4dad584b">
 
-
+<br />
 Next, we need to create credentials for remote_user and with generated previously private key.
 
 <img width="1328" alt="Zrzut ekranu 2023-07-16 o 12 20 27" src="https://github.com/eda6767/Jenkins/assets/102791467/ae7238f8-3a99-4257-8f01-932a817d1211">
 
+<br />
 Then we have to add remote SSH host:
 
-<img width="1391" alt="Zrzut ekranu 2023-07-16 o 12 11 46" src="https://github.com/eda6767/Jenkins/assets/102791467/80bd439d-e0d4-41a8-a765-bb709578ccc6">
+<img width="1277" alt="Zrzut ekranu 2023-07-16 o 17 08 53" src="https://github.com/eda6767/Jenkins/assets/102791467/b7afc89a-c4f7-4bcd-a177-06c72a867150">
 
+<br />
+
+<img width="1215" alt="Zrzut ekranu 2023-07-16 o 17 10 04" src="https://github.com/eda6767/Jenkins/assets/102791467/8bb32d8f-b555-4cb8-8657-9bb23e928f57">
