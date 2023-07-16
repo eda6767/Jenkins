@@ -330,7 +330,6 @@ docker exec -it 3518434374fe_jenkins bash
 ssh remote_user@remote_host
 ```
 
-<br />
 Another way to connect is by using remote-key, without a password:
 
 ```
