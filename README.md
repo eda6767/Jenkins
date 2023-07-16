@@ -81,11 +81,8 @@ Jenkins is now ready to use.
 </sup>
 
 # How to integrate Jenkins with Github
-
-
 In order to integrate Jenkins with Github we need to Create new job based on choosen Github repository.
-
-
+<br />
 Notice that instead of master branch we need to use main branch, otherwise we will receive error : Couldn't find any revision to build. Verify the repository and branch configuration for this job
 
 
@@ -191,7 +188,6 @@ docker logs -f jenkins
 
 
 ## Create Docker container for SSH
-<br />
 Now, we need to create a virtual machine with goal to execute jobs on this particular machine - another Docker container  with SSH service, that we can connect from. 
 <br />
 First, we can create folder under jenkins_/jenkins : centos and create Dockerfile in this folder
