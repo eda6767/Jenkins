@@ -199,47 +199,6 @@ mkdir centos
 touch Dockerfile
 ```
 
-```
-docker build -t remote-image .
-docker images
-```
-
-Now, we can build a container based on the image
-
-```
-docker run --name remote-container -p 80:80 remote-image
-docker ps
-```
-
-
-
-
-Let's take back to our JENKINS container, and modify the docker-compose.yml file. Let's add new service called remote_host which will be used for connection via SSH to another container.
-
-Out file should look like this:
-
-```
-version: '3'
-services:
-  remote
-    container_name: remote_container
-    ports:
-      - "8080:8080"
-    volumes:
-      "$PWD"/docker_home:/var/docker_home"  
-    networks:
-      - net
-networks:
-  net:        
-```
-
-Now, we need to create a virtual machine with goal to execute jobs on this particular machine - another Docker container  with SSH service, that we can connect from. 
-
-```
-mkdir centos
-touch Dockerfile
-```
-
 Dockerfile looks like this:
 
 ```
@@ -329,6 +288,55 @@ Now, we can execute:
 ```
 docker-compose build
 ```
+
+
+
+```
+docker build -t remote-image .
+docker images
+```
+
+Now, we can build a container based on the image
+
+```
+docker run --name remote-container -p 80:80 remote-image
+docker ps
+```
+
+
+
+
+Let's take back to our JENKINS container, and modify the docker-compose.yml file. Let's add new service called remote_host which will be used for connection via SSH to another container.
+
+Out file should look like this:
+
+```
+version: '3'
+services:
+  jenkins:
+    container_name: jenkins
+    image: jenkins/jenkins
+    ports:
+      - "8080:8080"
+    volumes:
+      - $PWD/jenkins_home:/var/jenkins_home
+    networks:
+      - net
+  remote_host:
+    container_name: remote-host
+    image: remote-host
+    build:
+      context: centos
+    networks:
+      - net
+networks:
+  net:    
+```
+
+Now, we need to create a virtual machine with goal to execute jobs on this particular machine - another Docker container  with SSH service, that we can connect from. 
+
+
+
 
 
 To check the running container : 
