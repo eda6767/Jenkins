@@ -161,6 +161,12 @@ networks:
   net:
 ```
 
+
+```
+mkdir jenkins_home
+```
+
+
 ## Installing plugins in Jenkins
 
 
