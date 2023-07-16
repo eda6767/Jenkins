@@ -289,6 +289,7 @@ docker-compose build
 ```
 <img width="989" alt="Zrzut ekranu 2023-07-16 o 16 01 43" src="https://github.com/eda6767/Jenkins/assets/102791467/54823d35-5e78-4bff-a6b5-f6de7bad1e7c">
 
+
 Now, we can list our images:
 
 ```
@@ -297,6 +298,7 @@ docker images
 <img width="481" alt="Zrzut ekranu 2023-07-16 o 16 02 09" src="https://github.com/eda6767/Jenkins/assets/102791467/1f41457b-17b9-4888-8891-aea68e2f4b43">
 
 
+Next step is to build a container based on new remote-image.
 
 ```
 docker build -t remote-image .
