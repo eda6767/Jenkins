@@ -191,8 +191,7 @@ docker logs -f jenkins
 
 
 ## Create Docker container for SSH
-
-First, we can create folder under jenkins_/jenkins : centos and create Dockerfile in this folder
+Now, we need to create a virtual machine with goal to execute jobs on this particular machine - another Docker container  with SSH service, that we can connect from. First, we can create folder under jenkins_/jenkins : centos and create Dockerfile in this folder
 
 ```
 mkdir centos
@@ -217,10 +216,12 @@ Then we will generate the key:
 ssh-keygen -f remote_key
 ```
 
-It will generate 2 files. First 'remote-key', which is certificate key - this is a private key, and second 'remote-key.pub' which is a public key. Now, let's modify the Dockerfile. 
+<br />
+<br />
 
-We need to add COPY instruction, which will copy a file from file system to this image. 
-
+It will generate 2 files. First 'remote-key', which is certificate key - this is a private key, and second 'remote-key.pub' which is a public key. Now, let's modify the Dockerfile. We need to add COPY instruction, which will copy a file from file system to this image. 
+<br />
+<br />
 
 ```
 COPY remote-key.pub /home/remote_user/.ssh/authorized_keys
@@ -253,8 +254,11 @@ RUN ssh-keygen -A
 CMD /usr/sbin/sshd -D
 
 ```
-
+<br />
+<br />
 Let's take back to our JENKINS container, and modify the docker-compose.yml file. Let's add new service called remote_host which will be used for connection via SSH to another container.
+<br />
+<br /> 
 
 Out file should look like this:
 
@@ -317,10 +321,6 @@ docker ps
 <br />
 <br />
 
-
-
-
-Now, we need to create a virtual machine with goal to execute jobs on this particular machine - another Docker container  with SSH service, that we can connect from. 
 
 
 
