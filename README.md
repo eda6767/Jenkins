@@ -321,7 +321,7 @@ docker ps
 Now, we can integrate Jenkins with our Docker container. We had previously defined remote host DNS for Jenkins containter and we can try to connect from jenkins container to remote_host container, using a password from Dockerfile
 
 ```
-docker exec -it 3518434374fe_jenkins bash
+docker exec -it jenkins bash
 ssh remote_user@remote_host
 ```
 
@@ -329,8 +329,8 @@ Another way to connect is by using remote-key, without a password:
 
 ```
 cd centos
-docker cp remote-key 3518434374fe_jenkins:/tmp/remote-key
-docker exec -it 3518434374fe_jenkins bash
+docker cp remote-key jenkins:/tmp/remote-key
+docker exec -it jenkins bash
 cd /tmp/
 ls
 ssh -i remote-key remote_user@remote_host
