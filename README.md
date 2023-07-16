@@ -181,11 +181,6 @@ docker logs -f jenkins
 <img width="641" alt="Zrzut ekranu 2023-07-16 o 13 31 49" src="https://github.com/eda6767/Jenkins/assets/102791467/64a8f7df-347f-45b4-a728-cef8dac2da99">
 
 
-## Installing plugins in Jenkins
-
-
-<img width="1397" alt="Zrzut ekranu 2023-06-25 o 15 54 00 1" src="https://github.com/eda6767/Jenkins/assets/102791467/ec0c40b5-d19f-48b0-b63d-8ced4dad584b">
-
 
 ## Create Docker container for SSH
 Now, we need to create a virtual machine with goal to execute jobs on this particular machine - another Docker container  with SSH service, that we can connect from. First, we can 
@@ -341,6 +336,11 @@ ls
 ssh -i remote-key remote_user@remote_host
 ```
 
+
+## Installing plugins in Jenkins
+
+
+<img width="1397" alt="Zrzut ekranu 2023-06-25 o 15 54 00 1" src="https://github.com/eda6767/Jenkins/assets/102791467/ec0c40b5-d19f-48b0-b63d-8ced4dad584b">
 
 
 <img width="1391" alt="Zrzut ekranu 2023-07-16 o 12 11 46" src="https://github.com/eda6767/Jenkins/assets/102791467/80bd439d-e0d4-41a8-a765-bb709578ccc6">
