@@ -166,6 +166,11 @@ networks:
 mkdir jenkins_home
 ```
 
+Now we have to create service reading the docker-compose files. 
+
+```
+docker-compose up -d
+```
 
 ## Installing plugins in Jenkins
 
