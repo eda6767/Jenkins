@@ -336,7 +336,7 @@ Another way to connect is by using remote-key, without a password:
 
 ```
 cd centos
-docker cp remote-key 3518434374fe_jenkins/tmp/remote-key
+docker cp remote-key 3518434374fe_jenkins:/tmp/remote-key
 docker exec ti- 3518434374fe_jenkins bash
 cd /tmp/
 ls
