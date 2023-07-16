@@ -192,7 +192,7 @@ docker logs -f jenkins
 
 ## Create Docker container for SSH
 
-First, we can create folder under jenkins_ : centos and create Dockerfile in this folder
+First, we can create folder under jenkins_/jenkins : centos and create Dockerfile in this folder
 
 ```
 mkdir centos
@@ -230,29 +230,6 @@ Finally Dockerfile looks like this:
 
 ```
 FROM centos
-
-RUN yum -y install openssh-server
-
-RUN useradd remote_user && \
-    echo "1234" | passwd remote-user --stdin && \
-    mkdir /home/remote_user/.ssh && \
-    chmod 700 /home/remote_user/.ssh
-
-COPY remote-key.pub /home/remote_user/.ssh/authorized_keys
-
-RUN chown remote_urser:remote_user -R /home/remote_user/.ssh/ && \
-    chmod 600 /home/remote_user/.ssh/authorized_keys
-
-RUN /usr/sbin/sshd-keygen
-
-CMD /usr/sbin/sshd -D
-```
-
-Next step is to modify 
-
-
-```
-FROM centos
 RUN cd /etc/yum.repos.d/
 RUN sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-*
 RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-*
@@ -261,50 +238,21 @@ RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|
 RUN yum -y install openssh-server
 RUN yum install -y passwd
 
-RUN useradd remote_user
-RUN echo "1234" | passwd remote_user --stdin && \
-    cd docker_home && \
-    mkdir remote_user && \
-    cd remote_user && \
-    mkdir .ssh && \
-    cd . && \
-    cd jenkins_/centos && \
-    chmod 700 /docker_home/remote_user/.ssh
+RUN useradd remote_user && \
+    echo "1234" | passwd remote_user --stdin && \
+    mkdir /home/remote_user/.ssh && \
+    chmod 700 /home/remote_user/.ssh
 
-COPY remote_key.pub /docker_home/remote_user/.ssh/authorized_keys
+COPY remote_key.pub /home/remote_user/.ssh/authorized_keys
 
-RUN chown remote_user:remote_user -R /docker_home/remote_user/.ssh/ && \
-    chmod 600 /docker_home/remote_user/.ssh/authorized_keys
+RUN chown remote_user:remote_user -R /home/remote_user/.ssh/ && \
+    chmod 600 /home/remote_user/.ssh/authorized_keys
 
-RUN /usr/sbin/sshd-keygen
+RUN ssh-keygen -A
 
 CMD /usr/sbin/sshd -D
 
-
 ```
-
-Now, we can execute:
-
-```
-docker-compose build
-```
-
-
-
-```
-docker build -t remote-image .
-docker images
-```
-
-Now, we can build a container based on the image
-
-```
-docker run --name remote-container -p 80:80 remote-image
-docker ps
-```
-
-
-
 
 Let's take back to our JENKINS container, and modify the docker-compose.yml file. Let's add new service called remote_host which will be used for connection via SSH to another container.
 
@@ -332,6 +280,40 @@ services:
 networks:
   net:    
 ```
+
+
+Now, we can execute:
+
+```
+docker-compose build
+```
+<img width="989" alt="Zrzut ekranu 2023-07-16 o 16 01 43" src="https://github.com/eda6767/Jenkins/assets/102791467/54823d35-5e78-4bff-a6b5-f6de7bad1e7c">
+
+Now, we can list our images:
+
+```
+docker images
+```
+<img width="481" alt="Zrzut ekranu 2023-07-16 o 16 02 09" src="https://github.com/eda6767/Jenkins/assets/102791467/1f41457b-17b9-4888-8891-aea68e2f4b43">
+
+
+
+```
+docker build -t remote-image .
+docker images
+```
+
+Now, we can build a container based on the image
+
+```
+docker run --name remote-container -p 80:80 remote-image
+docker ps
+```
+
+
+
+
+
 
 Now, we need to create a virtual machine with goal to execute jobs on this particular machine - another Docker container  with SSH service, that we can connect from. 
 
