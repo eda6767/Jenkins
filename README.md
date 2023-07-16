@@ -210,6 +210,14 @@ Then we will generate the key:
 ssh-keygen -f remote_key
 ```
 
+Or another method, which works for SSH:
+```
+ssh-keygen -f remote-ki -m PEM
+```
+
+It generates SSH file with the first line : ------BEGIN RSA PRIVATE KEY------
+
+
 <br />
 <br />
 
@@ -245,10 +253,23 @@ RUN chown remote_user:remote_user -R /home/remote_user/.ssh/ && \
 
 RUN ssh-keygen -A
 
+EXPOSE 22
+RUN rm -rf /run/nologin
+
 CMD /usr/sbin/sshd -D
 
 ```
 <br />
+Also I added 
+
+```
+EXPOSE 22
+RUN rm -rf /run/nologin
+```
+
+to avoid errors System is booting up. Unprivileged users are not permitted to log in yet. Please come back later. For technical details, see pam_nologin(8).
+
+
 <br />
 Let's take back to our JENKINS container, and modify the docker-compose.yml file. Let's add new service called remote_host which will be used for connection via SSH to another container.
 <br />
@@ -330,9 +351,9 @@ Another way to connect is by using remote-key, without a password:
 ```
 cd centos
 docker cp remote-key jenkins:/tmp/remote-key
+docker exec -u root jenkins bash -c "chown 1000:1000 /tmp/remote-key
 docker exec -it jenkins bash
 cd /tmp/
-ls
 ssh -i remote-key remote_user@remote_host
 ```
 
@@ -342,6 +363,8 @@ ssh -i remote-key remote_user@remote_host
 For this purpose first, we need to install plugins on Jenkins - SSH.
 
 <img width="1397" alt="Zrzut ekranu 2023-06-25 o 15 54 00 1" src="https://github.com/eda6767/Jenkins/assets/102791467/ec0c40b5-d19f-48b0-b63d-8ced4dad584b">
+
+
 
 <br />
 Next, we need to create credentials for remote_user and with generated previously private key.
