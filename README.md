@@ -284,6 +284,7 @@ networks:
 
 Now, we can execute:
 
+
 ```
 docker-compose build
 ```
@@ -298,12 +299,7 @@ docker images
 <img width="481" alt="Zrzut ekranu 2023-07-16 o 16 02 09" src="https://github.com/eda6767/Jenkins/assets/102791467/1f41457b-17b9-4888-8891-aea68e2f4b43">
 
 
-Next step is to build a container based on new remote-image.
 
-```
-docker build -t remote-image .
-docker images
-```
 
 Now, we can build a container based on the image
 
