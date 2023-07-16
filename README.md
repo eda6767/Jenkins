@@ -280,3 +280,9 @@ docker-compose build
 ```
 
 
+To check the running container : 
+
+```
+docker ps
+```
+
