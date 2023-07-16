@@ -294,7 +294,7 @@ docker-compose build
 ```
 <img width="989" alt="Zrzut ekranu 2023-07-16 o 16 01 43" src="https://github.com/eda6767/Jenkins/assets/102791467/54823d35-5e78-4bff-a6b5-f6de7bad1e7c">
 
-
+<br />
 Now, we can list our images:
 
 ```
@@ -302,14 +302,10 @@ docker images
 ```
 <img width="481" alt="Zrzut ekranu 2023-07-16 o 16 02 09" src="https://github.com/eda6767/Jenkins/assets/102791467/1f41457b-17b9-4888-8891-aea68e2f4b43">
 
-
-
 <br />
 <br />
 
 Now, we can build a container based on the image
-
-<br />
 <br />
 
 
@@ -319,19 +315,15 @@ docker ps
 ```
 
 <br />
-<br />
-
-
-
-
-
-
 To check the running container : 
 
 ```
 docker ps
 ```
 
+<img width="1185" alt="Zrzut ekranu 2023-07-16 o 16 13 14" src="https://github.com/eda6767/Jenkins/assets/102791467/b4c6eb80-badf-42a7-8a17-dae547203444">
+<br />
+<br />
 Now, we can integrate Jenkins with our Docker container. We had previously defined remote host DNS for Jenkins containter
 
 ```
