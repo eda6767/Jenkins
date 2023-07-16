@@ -174,6 +174,16 @@ docker ps
 docker logs -f jenkins
 ```
 
+Next step it to unlock Jenkins through website. The password you can find typing
+
+```
+docker logs -f jenkins
+
+```
+
+<img width="641" alt="Zrzut ekranu 2023-07-16 o 13 31 49" src="https://github.com/eda6767/Jenkins/assets/102791467/64a8f7df-347f-45b4-a728-cef8dac2da99">
+
+
 ## Installing plugins in Jenkins
 
 
